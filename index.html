@@ -20,7 +20,7 @@
       {{ greeting }}
       <!-- double curly braces in html are parsed as javascript by vue -->
 
-      <input v-model= "greeting"/>
+      <input @key-up.enter="greet" v-model= "greeting"/>
       <!-- directives; such as v-model, connect elements in HTML with the Vue.js's javascript and are used just like HTML attributes -->
       <hr />
 
@@ -44,6 +44,9 @@
         methods: {
           toggleBox() {
             this.isVisible = !this.isVisible
+          },
+          greet() {
+            console.log(this.greeting)
           }
         }
       })
