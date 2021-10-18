@@ -24,7 +24,7 @@
       <!-- directives; such as v-model, connect elements in HTML with the Vue.js's javascript and are used just like HTML attributes -->
       <hr />
 
-      <button v-on:click="isVisible = !isVisible">Toggle Box</button>
+      <button @click="isVisible = !isVisible">Toggle Box</button>
       <!--  -->
       <div v-if="isVisible" class="box"></div>
 
