@@ -2,14 +2,25 @@
 <html>
   <head>
     <title>Vue 3 Basics</title>
+    <style>
+      .box {
+        background-color: rgb(79, 80, 180);
+        height: 200px;
+        width:200px;
+      }
+    </style>
   </head>
   <body>
     <div class="app">
-      {{ greeting }} 
+      {{ greeting }}
       <!-- double curly braces in html are parsed as javascript by vue -->
 
       <input v-model= "greeting"/>
       <!-- directives; such as v-model, connect elements in HTML with the Vue.js's javascript and are used just like HTML attributes -->
+      <hr />
+
+      <div v-if="isVisible" class="box"></div>
+
     </div>
 
     <script src="https://unpkg.com/vue@next"></script>
@@ -17,7 +28,8 @@
       let app = Vue.createApp({
         data: function () {
           return {
-            greeting: 'Hello Vue 3!'
+            greeting: 'Hello Vue 3!',
+            isVisible: true
           }
         }
       })
