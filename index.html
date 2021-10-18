@@ -5,7 +5,11 @@
   </head>
   <body>
     <div class="app">
-      {{ greeting }}
+      {{ greeting }} 
+      <!-- double curly braces in html are parsed as javascript by vue -->
+
+      <input v-model= "greeting"/>
+      <!-- directives; such as v-model, connect elements in HTML with the Vue.js's javascript and are used just like HTML attributes -->
     </div>
 
     <script src="https://unpkg.com/vue@next"></script>
