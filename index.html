@@ -8,6 +8,18 @@
         height: 200px;
         width: 200px;
       }
+
+      .box2 {
+        background-color: rgb(79, 180, 180);
+        height: 200px;
+        width: 200px;
+      }
+
+      .box3 {
+        background-color: rgb(180, 145, 79);
+        height: 200px;
+        width: 200px;
+      }
     </style>
   </head>
   <body>
@@ -20,8 +32,10 @@
       <hr />
 
       <div v-if="isVisible" class="box"></div>
+      <div v-else-if="isVisible2" class="box2"></div>
+      <div v-else class="box3"></div>
       <!-- v-if expects a boolean variable and will show since the isVisible object is set to true -->
-      <!-- v-if and v-show are very similar but v-if is typically more preferrable because its only rendered on the dom if its true or truthy where as v-show is always rendered but the styling is set to hidden  or visible-->
+      <!-- v-if and v-show are very similar but v-if is typically more preferable because its only rendered on the dom if its true or truthy where as v-show is always rendered but the styling is set to hidden  or visible-->
     </div>
 
     <script src="https://unpkg.com/vue@next"></script>
@@ -30,7 +44,8 @@
         data: function () {
           return {
             greeting: 'Hello Vue 3!',
-            isVisible: true
+            isVisible: true,
+            isVisible2: false
           }
         }
       })
