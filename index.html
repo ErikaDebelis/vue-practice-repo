@@ -88,13 +88,18 @@
         `,
         props: ['label', 'modelValue'],
         // under the hood the v-model from the parent component gives another prop called modelValue. we're listening for modelValue in the child here so we can use in the the getter
+
+        //whenever the below update:modelValue 'emits' the v-model from the parent component is updating the value of the variable.
+        
         computed: {
           inputValue: {
             get() {
               return this.modelValue
             },
-            set() {
-
+            set(value) {
+              console.log(value)
+              this.$emit('update:modelValue', value)
+              // $emit is a vue method that create events that other components can listen to. this is how to pass data from the child back up to the parent. either custom events or built in
             }
           }
         }
