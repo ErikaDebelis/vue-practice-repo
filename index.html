@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Vue 3 Basics</title>
+
     <style>
       .box {
         background-color: rgb(79, 80, 180);
@@ -19,6 +20,7 @@
       }
 
     </style>
+
   </head>
 
   <body>
@@ -53,19 +55,28 @@
       })
       app.component('login-form', {
         template: `
-        <div>
+        <form @submit.prevent= "handleSubmit">
           <h1>{{ title }}</h1>
           <input type="email" />
           <input type="password" />
-        </div>
+          <button>Log In</button>
+        </form>
         `,
         data() {
           return {
             title: 'Login Form'
           }
+        },
+        methods: {
+          handleSubmit() {
+            console.log("submitted")
+          }
         }
       })
+
       app.mount('.app')
+
     </script>
+
   </body>
 </html>
